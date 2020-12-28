@@ -1,0 +1,96 @@
+
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - hey there
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yeah
+    - yes,am interested
+    - yes,I heard about it
+    - yaa
+    - ok sure
+    - great
+    - cool
+    - ok
+    - interested
+    - yes,i may be interested.
+    - can
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - no,what is it about?
+    - no,please tell about it.
+    - NO
+    - not interested
+    - yes,please don't call again
+    - no however am also not working
+    - what is careshield?
+    - what is this about?
+- intent: not_interested
+  examples: |
+    - sorry,not interested
+    - no,thanks
+    - I am already covered with other insurance firm
+- intent: more_info
+  examples: |
+    - tell me more
+    - sure,tell me more
+    - can I find out more?
+    - can i know more
+    - i don't understand you
+- intent: mood_busy
+  examples: |
+    - busy
+    - am busy now,call later
+    - busy right now
+    - in meeting
+    - I don't have time for the call now
+    - let me think about it
+    - i will contact you later
+    - sorry,this isn't a good/convienent time to talk.I am at work
+- intent: don't_call_again
+  examples: |
+    - yes,I have been called by multiple by your company.Please don't call again.
+    - please don't call me again
+- intent: language_challenge
+  examples: |
+    - would you converse in [chinese](language)
+    - am not able to understand your language
+    - can you speak in other language
+- intent: general_talk
+  examples: |
+    - it is okay
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- lookup: language
+    - chinese
+    - german
+    - english
+    - hindi

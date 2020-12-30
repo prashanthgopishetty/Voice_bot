@@ -27,7 +27,7 @@ entities:
 
 responses:
   utter_greet:
-    - text: Hello, I'm Janice calling behalf of Aviva regarding Careshield life. Are you aware of it?
+    - text: Hello, I'm Janice calling on behalf of Aviva regarding Careshield life. Are you aware of it?
     #- text: Hi ! I'm Janice, calling on behalf of an independent financial advisory firm regarding Careshield life. Currently we are spreading awareness regarding government disability income scheme. Are you aware of it?
   utter_info:
     - text: Careshield life is a government initiative that provides long-term care insurance scheme giving basic financial support should Singaporeans become severely disabled and medical care for a prolonged duration We are doing a free upgrade service to enhanced the payout. Would you be interested to find out more?
@@ -53,16 +53,16 @@ responses:
     - text: oh! why not ?
 
   utter_language_challenge_check:
-    - text: would you like to arrange another call with [mandarin] speaking professional?
+    - text: would you like to arrange another call with [Chinese] speaking agent?
 
   utter_call_again_check:
-    - text: will it be alright if i call you back?
+    - text: will it be alright to call you back?
 
   utter_happy_bye:
     - text: Thanks for picking up the call,our professionals will call you after working hours.
 
   utter_sad_bye:
-    - text: Alright,thanks for picking up the call and sorry to disturb
+    - text: Alright,thank you for picking up the call and sorry to disturb goodbye
 
   utter_e-brochure_check:
     - text: NOted.Will send an e-brochure instead.thank you.

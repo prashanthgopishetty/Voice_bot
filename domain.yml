@@ -27,10 +27,10 @@ entities:
 
 responses:
   utter_greet:
-    - text: Hi, this is Janice calling from Aviva regarding your Careshield life. Have you heard about it?
+    - text: Hello, I'm Janice calling behalf of Aviva regarding Careshield life. Are you aware of it?
     #- text: Hi ! I'm Janice, calling on behalf of an independent financial advisory firm regarding Careshield life. Currently we are spreading awareness regarding government disability income scheme. Are you aware of it?
   utter_info:
-    - text: Careshield life is a government initiative that provides long-term care insurance scheme giving basic financial support should Singaporeans become severely disabled and medical care for a prolonged duration We are now doing a free upgrade service to enhanced the payout. Would you be interested to find out more?
+    - text: Careshield life is a government initiative that provides long-term care insurance scheme giving basic financial support should Singaporeans become severely disabled and medical care for a prolonged duration We are doing a free upgrade service to enhanced the payout. Would you be interested to find out more?
 
   utter_upgrade_check:
     - text: thats great! will you be interested in our free upgrade as well?
@@ -39,11 +39,11 @@ responses:
     - text: Careshield life is a disability income scheme launched by the government. As long as you are unable to move around the house, the government will be giving you money every month.Are you interested?
 
   utter_offers_info:
-    - text: It is a national long term care insurance scheme.offers payout upon severe disability
+    - text: This is a long term care insurance scheme. That offers payout upon severe disability
 
   utter_payable_info:
-    - text: fully payable by Medisave(30-67)
-        will it be alright if our prfessionals contact you again to tell you more?
+    - text: This fully payable by Medisave if your'e between the age(30-67)
+        
 
   utter_contact_agent:
    # - text: Thats great, we will have our professional agent to follow up with you on this. Thank you.
@@ -56,7 +56,7 @@ responses:
     - text: would you like to arrange another call with [mandarin] speaking professional?
 
   utter_call_again_check:
-    - text: will it be alright if i call you back some time later this week?
+    - text: will it be alright if i call you back?
 
   utter_happy_bye:
     - text: Thanks for picking up the call,our professionals will call you after working hours.

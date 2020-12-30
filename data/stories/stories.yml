@@ -28,10 +28,10 @@ stories:
   steps:
   - intent: need_info
   - action: utter_more_info
-  - action: utter_offers_info
-  - action: utter_payable_info
+  #- action: utter_offers_info
+  #- action: utter_payable_info
   - intent: affirm
-  - action: utter_goodbye
+  - action: utter_contact_agent
 
 - story: busy happy path 1
   steps:
@@ -115,7 +115,7 @@ stories:
   steps:
   - intent: need_info
   - action: utter_more_info
-  - action: utter_offers_info
+  #- action: utter_offers_info
   - action: utter_payable_info
   - intent: deny
   - action: utter_goodbye
@@ -133,7 +133,7 @@ stories:
   - action: utter_more_info
   - intent: more_info
   - action: utter_offers_info
-  - action: utter_payable_info
+  #- action: utter_payable_info
   - intent: affirm
   - action: utter_goodbye
 

@@ -28,10 +28,10 @@ stories:
   steps:
   - intent: need_info
   - action: utter_more_info
-  #- action: utter_offers_info
-  #- action: utter_payable_info
+  - action: utter_offers_info
+  - action: utter_payable_info
   - intent: affirm
-  - action: utter_contact_agent
+  - action: utter_goodbye
 
 - story: busy happy path 1
   steps:
@@ -115,16 +115,9 @@ stories:
   steps:
   - intent: need_info
   - action: utter_more_info
-  #- action: utter_offers_info
+  - action: utter_offers_info
   - action: utter_payable_info
   - intent: deny
-  - action: utter_goodbye
-
-- story: busy path
-  steps:
-  - intent: need_info
-  - action: utter_info
-  - intent: mood_busy
   - action: utter_goodbye
 
 - story: more_info path
@@ -133,7 +126,7 @@ stories:
   - action: utter_more_info
   - intent: more_info
   - action: utter_offers_info
-  #- action: utter_payable_info
+  - action: utter_payable_info
   - intent: affirm
   - action: utter_goodbye
 
@@ -146,15 +139,6 @@ stories:
   steps:
   - intent: language_challenge
   - action: utter_language_challenge_check
-  - intent: deny
-  - action: utter_goodbye
-
-- story: language challenge 2
-  steps:
-  - intent: language_challenge
-  - action: utter_language_challenge_check
-  - intent: affirm
-  - action: utter_goodbye
 
 - story: waiting path
   steps:
@@ -162,7 +146,7 @@ stories:
   - action: utter_upgrade_check
   - intent: waiting_list
   - action: utter_goodbye
-  - action: action_restart
+
 
 - story: bot challenge path
   steps:
@@ -172,13 +156,13 @@ stories:
   - action: utter_more_info
   - intent: deny
   - action: utter_goodbye
-  - action: action_restart
+
 
 - story: not interested conform path
   steps:
   - intent: not_interested_conform
   - action: utter_goodbye
-  - action: action_restart
+
 
 - story: e-brochure check path
   steps:
@@ -188,9 +172,9 @@ stories:
   - action: utter_payable_info
   - intent: regarding_e-brochure
   - action: utter_e-brochure_check
-  - action: action_restart
+
 - story: not eligible path
   steps:
   - intent: not_eligible
   - action: utter_goodbye
-  - action: action_restart
+

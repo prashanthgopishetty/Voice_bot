@@ -71,7 +71,7 @@ class SocketIOOutput(OutputChannel):
         for key,value in voice_output.items():
             if utterance == key:
                 return value 
-            #copyfile('./audio_clips/'+ text + '.wav', OUT_FILE)
+            #copyfile('./voice_clips/'+ text + '.wav', OUT_FILE)
 
     async def _send_audio_message(self, socket_id, response,  **kwargs: Any):
         # type: (Text, Any) -> None
@@ -80,7 +80,7 @@ class SocketIOOutput(OutputChannel):
         OUT_FILE = str(ts)+'.wav'
         link = "http://localhost:8888/"+OUT_FILE
         #self.tts(response['text'], OUT_FILE)
-        copyfile('./audio_clips/'+ response['text'] + '.wav', OUT_FILE)
+        copyfile('./voice_clips/'+ response['text'] + '.wav', OUT_FILE)
         responseText = self.getText(response['text'])
         await self.sio.emit(self.bot_message_evt, {'text':responseText, "link":link}, room=socket_id)
 

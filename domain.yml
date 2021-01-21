@@ -27,8 +27,10 @@ entities:
 
 responses:
   utter_greet:
-    - text: greet
     - text: greet_info
+
+  utter_greet_call_conform:
+    - text: greet_call_conform
 
   utter_info:
     - text: info

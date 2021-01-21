@@ -32,6 +32,8 @@ nlu:
     - interested
     - yes,i may be interested.
     - can
+    - I am keen, interested.
+
 - intent: need_info
   examples: |
     - what is it?
@@ -48,19 +50,29 @@ nlu:
     - what is [careshield](company)
     - what is this about?
     - what [insurance firm](company)
-    - which [lic](company)
+    - what are you talking about?
+    - what careshiled?
+    - Didn't get you
+    - Didn't understand you
+    - can you describe about it?
+    - can you explain furher?
+    - I am not aware of this
 
 - intent: deny
   examples: |
     - no
     - No
     - i dont want anymore
+    - I don't want
 
 - intent: not_interested
   examples: |
     - sorry,not interested
     - no,thanks
     - not interested
+    - I have my own agent
+    - no, thank you. I am not interested
+    - I don't want
 
 - intent: more_info
   examples: |
@@ -68,8 +80,8 @@ nlu:
     - sure,tell me more
     - can I find out more?
     - can i know more
-    - i don't understand you
     - can you tell in detail
+    - I want to know in brief
 
 - intent: mood_busy
   examples: |
@@ -79,12 +91,20 @@ nlu:
     - in meeting.call at [10 am](time)
     - I don't have time for the call now
     - i will contact you later
-    - sorry,this isn't a good/convienent time to talk.I am at work
+    - sorry,this isn't a good/convienent time to talk.
+    - Don't disturb me.
+    - I am at work
+    - am in middle of meeting.
+    - am unavaialble right now.
+    - not free at the moment
+    - can you call back?
+    - I am currently driving.
 
 - intent: don't_call_again
   examples: |
     - yes,I have been called by multiple by your company.Please don't call again.
     - please don't call me again
+    - Please put me on your <do-not-call list> if possible, Thanks
 
 - intent: language_challenge
   examples: |
@@ -95,12 +115,13 @@ nlu:
 - intent: waiting_list
   examples: |
     - let me think about it
-    - give me some time to thin about it
+    - give me some time to think about it
 
 - intent: regarding_e-brochure
   examples: |
     - can you send e-brochure to my number
     - can i have e-brochure
+    - Will it be alright to send an <e-brochure> to your whatsapp instead?
 
 - intent: not_eligible
   examples: |

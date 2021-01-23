@@ -74,6 +74,11 @@ nlu:
     - no, thank you. I am not interested
     - I don't want
 
+- intent: payable_info
+  examples: |
+    - how much will it be ?
+    - Will I need to pay any cash upon signing up?
+
 - intent: more_info
   examples: |
     - tell me more

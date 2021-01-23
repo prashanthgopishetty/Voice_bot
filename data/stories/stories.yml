@@ -28,7 +28,6 @@ stories:
   steps:
   - intent: need_info
   - action: utter_more_info
-  - action: utter_offers_info
   - action: utter_payable_info
   - intent: affirm
   - action: utter_goodbye
@@ -115,7 +114,6 @@ stories:
   steps:
   - intent: need_info
   - action: utter_more_info
-  - action: utter_offers_info
   - action: utter_payable_info
   - intent: deny
   - action: utter_goodbye
@@ -125,7 +123,6 @@ stories:
   - intent: more_info
   - action: utter_more_info
   - intent: more_info
-  - action: utter_offers_info
   - action: utter_payable_info
   - intent: affirm
   - action: utter_goodbye
@@ -168,7 +165,6 @@ stories:
   steps:
   - intent: more_info
   - action: utter_more_info
-  - action: utter_offers_info
   - action: utter_payable_info
   - intent: regarding_e-brochure
   - action: utter_e-brochure_check
@@ -178,3 +174,20 @@ stories:
   - intent: not_eligible
   - action: utter_goodbye
 
+- story: new path
+  steps:
+  - intent: affirm
+  - action: utter_info
+  - intent: payable_info
+  - action: utter_payable_info
+  - intent: affirm
+  - action: utter_contact_agent
+
+- story: new path 1
+  steps:
+  - intent: affirm
+  - action: utter_info
+  - intent: payable_info
+  - action: utter_payable_info
+  - intent: deny
+  - action: utter_goodbye

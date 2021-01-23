@@ -78,7 +78,7 @@ class SocketIOOutput(OutputChannel):
         """Sends a message to the recipient using the bot event."""
         ts = time.time()
         OUT_FILE = str(ts)+'.wav'
-        link = "http://localhost:8888/"+OUT_FILE
+        link = "35.198.255.208:8888"+OUT_FILE
         #self.tts(response['text'], OUT_FILE)
         copyfile('./voice_clips/'+ response['text'] + '.wav', OUT_FILE)
         responseText = self.getText(response['text'])

@@ -3,7 +3,7 @@ rules:
 - rule: greet
   steps:
   - intent: greet
-  - action: utter_greet
+  - action: utter_greet_call_conform
 
 - rule: goodbye
   steps:

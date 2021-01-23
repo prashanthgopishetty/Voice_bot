@@ -17,6 +17,7 @@ intents:
   - not_eligible
   - not_interested_conform
   - out_of_scope
+  - payable_info
   - trigger_rephrase
 
 entities:

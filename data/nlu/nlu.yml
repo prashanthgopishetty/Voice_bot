@@ -29,10 +29,14 @@ nlu:
     - great
     - cool
     - ok
+    - okay
+    - sure
     - interested
     - yes,i may be interested.
     - can
     - I am keen, interested.
+    - okay,call me after office hours.
+    - yes, call me after working hours.
 
 - intent: need_info
   examples: |
@@ -152,6 +156,12 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
+- intent: procedure_check
+  examples: |
+    - yes,what is the procedure to proceed?
+    - ok, how should i proceed?
+    - can i know how to proceed
+
 - lookup: language
   examples: |
     - english
@@ -159,13 +169,6 @@ nlu:
     - french
     - chinese
     - spanish
-
-- lookup: time
-  examples: |
-    - 10 am
-    - 4 pm
-    - 12 pm
-    - 9 am
 
 - synonym: company
   examples: |

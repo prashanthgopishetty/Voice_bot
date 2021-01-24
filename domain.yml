@@ -18,6 +18,7 @@ intents:
   - not_interested_conform
   - out_of_scope
   - payable_info
+  - procedure_check
   - trigger_rephrase
 
 entities:
@@ -80,6 +81,18 @@ responses:
 
   utter_out_of_scope:
     - text: out_of_scope
+
+  utter_purpose:
+    - text: purpose
+
+  utter_explanation:
+    - text: explanation
+
+  utter_conversion:
+    - text: conversion
+
+  utter_ending:
+    - text: ending
 
 session_config:
   session_expiration_time: 60

@@ -11,7 +11,8 @@ import speech_recognition as sr
 from rasa.core.channels.channel import InputChannel
 from rasa.core.channels.channel import UserMessage, OutputChannel
 
-
+#import deepspeech
+#from deepspeech import Model
 import scipy.io.wavfile as wav
 
 import os
@@ -22,7 +23,7 @@ import time
 import numpy as np
 from collections import OrderedDict
 import urllib
-from mapping import voice_output
+from mapping import voice_ouput
 import librosa
 
 #from TTS.models.tacotron import Tacotron
@@ -66,22 +67,21 @@ class SocketIOOutput(OutputChannel):
     #    from gtts import gTTS
      #   myobj = gTTS(text=text, lang='en', slow=False)
       #  myobj.save(OUT_FILE)
-    def getText(self,utterance): 
-        for key,value in voice_output.items():
-            if utterance == key:
-                return value 
-            #copyfile('./voice_clips/'+ text + '.wav', OUT_FILE)
+
+    def search_in_dict(self, text, OUT_FILE):
+        for key, value in voice_ouput.items():
+            if text == key:
+                copyfile(value, OUT_FILE)
 
     async def _send_audio_message(self, socket_id, response,  **kwargs: Any):
         # type: (Text, Any) -> None
         """Sends a message to the recipient using the bot event."""
         ts = time.time()
         OUT_FILE = str(ts)+'.wav'
-        link = "/https://localhost:8888/"+OUT_FILE
+        link = "http://localhost:8888/"+OUT_FILE
         #self.tts(response['text'], OUT_FILE)
-        copyfile('./property_clips/'+ response['text'] + '.wav', OUT_FILE)
-        responseText = self.getText(response['text'])
-        await self.sio.emit(self.bot_message_evt, {'text':responseText, "link":link}, room=socket_id)
+        self.search_in_dict(response['text'], OUT_FILE)
+        await self.sio.emit(self.bot_message_evt, {'text':response['text'], "link":link}, room=socket_id)
 
 
     async def send_text_message(self, recipient_id: Text, message: Text, **kwargs: Any) -> None:

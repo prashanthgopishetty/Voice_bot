@@ -3,10 +3,14 @@ rules:
 - rule: greet
   steps:
   - intent: greet
-  - action: utter_greet_info
+  - action: utter_greet
 
 - rule: goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
+- rule: out_of_scope
+  steps:
+  - intent: nlu_fallback
+  - action: utter_out_of_scope

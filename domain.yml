@@ -13,40 +13,71 @@ intents:
   - not_interested
   - general_talk
   - waiting_list
-  - flat_type
-  - regarding_valuation report
   - regarding_e-brochure
   - not_eligible
   - not_interested_conform
   - out_of_scope
-  - payable_info
-  - procedure_check
   - trigger_rephrase
 
+entities:
+  - company
+  - language
+  - time
+
+
 responses:
+  utter_greet:
+    - text: greet
+    - text: greet_info
 
- utter_greet_info:
-   - text: greet_info
- 
- utter_purpose:
-   - text: purpose
-   
- utter_goodbye:
-   - text: goodbye
-   
- utter_deny_bye:
-   - text: deny_bye
-   
- utter_details:
-   - text: details
-   
- utter_contact_agent:
-   - text: contact_agent
-   
- utter_thanks_bye:
-   - text: thanks_bye
+  utter_info:
+    - text: info
 
- utter_bye:
-   - text: bye
-   
-   
+  utter_upgrade_check:
+    - text: upgrade_check
+
+  utter_more_info:
+    - text: more_info
+
+  utter_offers_info:
+    - text: offers_info
+
+  utter_payable_info:
+    - text: payable_info
+
+  utter_contact_agent:
+    - text: contact_agent
+    - text: contact_representative
+
+  utter_reason_check:
+    - text: reason_check
+
+  utter_language_challenge_check:
+    - text: language_check
+
+  utter_call_again_check:
+    - text: call_again_check
+
+  utter_happy_bye:
+    - text: happy_bye
+    - text: happy_goodbye
+
+  utter_sad_bye:
+    - text: sad_bye
+
+  utter_e-brochure_check:
+    - text: ebrochure_check
+
+  utter_bot_challenge:
+    - text: bot_challenge
+
+  utter_goodbye:
+    - text: Bye
+    - text: goodbye
+
+  utter_out_of_scope:
+    - text: out_of_scope
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

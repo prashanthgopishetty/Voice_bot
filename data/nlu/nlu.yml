@@ -8,12 +8,14 @@ nlu:
     - good morning
     - good evening
     - hey there
+    
 - intent: goodbye
   examples: |
     - bye
     - goodbye
     - see you around
     - see you later
+    
 - intent: affirm
   examples: |
     - yes
@@ -32,24 +34,16 @@ nlu:
     - interested
     - yes,i may be interested.
     - can
+    - no obligation ya
+    - ok thankyou
+    - you will email me?
+    - so i wait for the call
+    
 - intent: need_info
   examples: |
     - what is it?
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - no
-    - not really
-    - no,what is it about?
-    - no,please tell about it.
-    - I didnt heard about it
-    - no however am also not working
-    - what is [careshield](company)
-    - what is this about?
-    - what [insurance firm](company)
-    - which [lic](company)
-
+    - yes what is it about?
+    
 - intent: deny
   examples: |
     - no
@@ -74,6 +68,7 @@ nlu:
 - intent: mood_busy
   examples: |
     - busy
+    - not free
     - am busy now,call later at [5 pm](time)
     - busy right now
     - in meeting.call at [10 am](time)
@@ -85,22 +80,21 @@ nlu:
   examples: |
     - yes,I have been called by multiple by your company.Please don't call again.
     - please don't call me again
+    - stop calling me
 
-- intent: language_challenge
+- intent: flat_type
   examples: |
-    - would you converse in [chinese](language)
-    - am not able to understand your language
-    - can you speak in other language
-
+    - private
+    - HDB
+    
 - intent: waiting_list
   examples: |
     - let me think about it
     - give me some time to thin about it
 
-- intent: regarding_e-brochure
+- intent: regarding_valuation report
   examples: |
-    - can you send e-brochure to my number
-    - can i have e-brochure
+    - Yes send me the valuation report via email
 
 - intent: not_eligible
   examples: |
@@ -126,23 +120,4 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
-- lookup: language
-  examples: |
-    - english
-    - hindi
-    - french
-    - chinese
-    - spanish
 
-- lookup: time
-  examples: |
-    - 10 am
-    - 4 pm
-    - 12 pm
-    - 9 am
-
-- synonym: company
-  examples: |
-    - lic
-    - insurance firm
-    - careshield

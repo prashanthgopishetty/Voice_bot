@@ -1,100 +1,55 @@
-# Sara - the Rasa Demo Bot
-[![Build Status](https://travis-ci.com/RasaHQ/rasa-demo.svg?branch=master)](https://travis-ci.com/RasaHQ/rasa-demo)
+-------  rasa setup ------------------------------
+0.  cd ~/py-envs/
+1.  python3.7 -m venv env379-rasa1.10.3
+2.  source env379-rasa1.10.3/bin/activate
+3.  cd ~/Acac
+4.  git clone https://github.com/RasaHQ/rasa-demo.git Acac
+5.  cd Acac
+6.  pip3 install rasa==1.10.3
+//  if you get errors while executing above step 'ERROR: tensorflow 2.1.2 has requirement gast==0.2.2, but you'll have gast 0.4.0 which is incompatible.ERROR: tensorflow 2.1.2 has requirement numpy<1.19.0,>=1.16.0, but you'll have numpy 1.19.2 which is incompatible........ then install proper versions using pip3 install command'
+8.  pip3 install gast==0.2.2
+9.  pip3 install numpy==1.18.5
+//  open setup.py file and update requests version from 2.21.0 to 2.23.0 and open config.yml file remove convertRT tokenizer, covertRTfeaturizer and add Whitespace tokenizer
+10.  pip3 install -e .
+11.  rasa train --augmentation 0
+12.  pip3 install spacy
+13.  python3 -m spacy download en
 
-## :surfer: Introduction
-The purpose of this repo is to showcase a contextual AI assistant built with the open source Rasa framework.
+-------  docker clean up------------------------
 
-Sara is an alpha version and lives in our docs, 
-helping developers getting started with our open source tools. It supports the following user goals:
+1. sudo docker ps -a
+2. sudo docker container ls -a
+3. sudo docker container ls -aq
+4. sudo docker container stop $(sudo docker container ls -aq)
+5. sudo docker container rm $(sudo docker container ls -aq)
 
-- Understanding the Rasa framework
-- Getting started with Rasa
-- Answering some FAQs around Rasa
-- Directing technical questions to specific documentation
-- Subscribing to the Rasa newsletter
-- Requesting a call with Rasa's sales team
-- Handling basic chitchat
+------- test rasa assistent---------------------
 
-You can find planned enhancements for Sara in the
-[Project Board](https://github.com/RasaHQ/rasa-demo/projects/1)
+1. sudo docker run -p 8000:8000 rasa/duckling &
+2. rasa run actions --actions actions &
+3. rasa shell
+// once you are getting the proper response in shell then stop the processes.
 
-## 👷‍ Installation
 
-To install Sara, please clone the repo and run:
+------ voice interface -------------------------------------
 
-```
-cd rasa-demo
-pip install -r requirements.txt
-pip install -e .
-```
-This will install the bot and all of its requirements.
-Note that this bot should be used with python 3.6 or 3.7.
 
-## 🤖 To run Sara:
+1. cd ~/Acac/
+2. cd rasa-voice-interface
+4. npm install
+5. npm run serve
 
-Use `rasa train` to train a model (this will take a significant amount of memory to train,
-if you want to train it faster, try the training command with
-`--augmentation 0`).
 
-Then, to run, first set up your action server in one terminal window:
-```bash
-rasa run actions --actions actions.actions
-```
+-----rasa connectorio file----------------
+1. copy socketio_connector.py file in rasa project directory.
+2. copy credentials.yml into sara project
 
-There are some custom actions that require connections to external services,
-specifically `SubscribeNewsletterForm` and `SalesForm`. For these
-to run you would need to have your own MailChimp newsletter and a Google sheet
-to connect to.
 
-In another window, run the bot:
-```bash
-docker run -p 8000:8000 rasa/duckling
-rasa shell --debug
-```
+---- run all servers---------
 
-Note that `--debug` mode will produce a lot of output meant to help you understand how the bot is working 
-under the hood. To simply talk to the bot, you can remove this flag.
+1. rasa run --enable-api -p 5005
+2. rasa run actions --actions actions
+3. sudo docker run -p 8000:8000 rasa/duckling
+4. python3 -m http.server 8888
 
-If you would like to run Sara on your website, follow the instructions
-[here](https://github.com/botfront/rasa-webchat) to place the chat widget on
-your website.
 
-## To test Sara:
-
-After doing a `rasa train`, run the command:
-
-```bash
-rasa test nlu -u test/test_data.json --model models
-rasa test core --stories test/test_stories.md
-```
-
-## 👩‍💻 Overview of the files
-
-`data/core/` - contains stories 
-
-`data/nlu` - contains NLU training data
-
-`actions` - contains custom action code
-
-`domain.yml` - the domain file, including bot response templates
-
-`config.yml` - training configurations for the NLU pipeline and policy ensemble
-
-## ⚫️ Code Style
-
-To ensure a standardized code style we use the formatter [black](https://github.com/ambv/black).
-
-If you want to automatically format your code on every commit, you can use [pre-commit](https://pre-commit.com/).
-Just install it via `pip install pre-commit` and execute `pre-commit install` in the root folder.
-This will add a hook to the repository, which reformats files on every commit.
-
-If you want to set it up manually, install black via `pip install black`.
-To reformat files execute
-```
-black .
-```
-
-## :gift: License
-Licensed under the GNU General Public License v3. Copyright 2018 Rasa Technologies
-GmbH. [Copy of the license](https://github.com/RasaHQ/rasa-demo/blob/master/LICENSE).
-Licensees may convey the work under this license. There is no warranty for the work.
